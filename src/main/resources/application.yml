@@ -3,7 +3,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   application:
-    name: sample
+    name: rantalms
   profiles:
     active: default
   datasource:
@@ -21,19 +21,9 @@ spring:
     console:
       enabled: true
       path: /h2-console
-  kafka:
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: foo0
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
 server:
-  port: 8080
+  port: 8081
 
 logging:
   level:
