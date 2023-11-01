@@ -1,4 +1,4 @@
-package com.msa.rental.domain.model.vo;
+package com.msa.member.domain.model.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

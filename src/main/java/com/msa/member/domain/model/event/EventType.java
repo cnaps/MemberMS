@@ -1,4 +1,4 @@
-package com.msa.book.domain.model.event;
+package com.msa.member.domain.model.event;
 
 public enum EventType {
     RENT,RETURN,OVERDUE

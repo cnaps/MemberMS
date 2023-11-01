@@ -3,7 +3,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   application:
-    name: rantalms
+    name: member
   profiles:
     active: default
   datasource:
@@ -23,8 +23,26 @@ spring:
       path: /h2-console
 
 server:
-  port: 8081
+  port: 8083
 
 logging:
   level:
     org.hibernate.SQL: debug
+
+producers:
+  topic1:
+    name: rental_result
+
+consumer:
+  topic1:
+    name: rental_rent
+  topic2:
+    name: rental_return
+  topic3:
+    name: overdue_clear
+  topic4:
+    name: point_use
+  groupid:
+    name: member
+kafka:
+  bootstrapAddress: localhost:9092

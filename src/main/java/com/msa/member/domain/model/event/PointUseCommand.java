@@ -1,12 +1,17 @@
-package com.msa.rental.domain.model.event;
+package com.msa.member.domain.model.event;
 
-import com.msa.rental.domain.model.vo.IDName;
+
+import com.msa.member.domain.model.vo.IDName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
-public class PointUseCommand {
+public class PointUseCommand implements Serializable {
     private IDName idName;
     private long point;
 }
