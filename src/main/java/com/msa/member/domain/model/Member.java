@@ -42,12 +42,12 @@ public class Member {
         this.authorites.add(authority);
     }
 
-    public long savePoint(long point)
+    public Point savePoint(Point point)
     {
         return this.point.addPoint(point);
     }
 
-    public long usePoint(long point) throws Exception {
+    public Point usePoint(Point point) throws Exception {
        return this.point.removePoint(point);
     }
 

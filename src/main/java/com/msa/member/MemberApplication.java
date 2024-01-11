@@ -4,6 +4,7 @@ import com.msa.member.domain.model.Member;
 import com.msa.member.domain.model.vo.Email;
 import com.msa.member.domain.model.vo.IDName;
 import com.msa.member.domain.model.vo.PassWord;
+import com.msa.member.domain.model.vo.Point;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -22,15 +23,15 @@ public class MemberApplication {
         System.out.println(member.toString());
 
         System.out.println("포인트 10 적립");
-        member.savePoint(10);
+        member.savePoint(new Point(10));
 
         System.out.println(member.getPoint());
         System.out.println("포인트 20 적립");
-        member.savePoint(20);
+        member.savePoint(new Point(20));
         System.out.println(member.getPoint());
 
         System.out.println("포인트 10 사용");
-        member.usePoint(10);
+        member.usePoint(new Point(10));
         System.out.println(member.getPoint());
 
         System.out.println("-----------------------------------------");

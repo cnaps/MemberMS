@@ -4,6 +4,7 @@ import com.msa.member.application.outputport.MemberOutPutPort;
 import com.msa.member.application.usecase.UsePointUsecase;
 import com.msa.member.domain.model.Member;
 import com.msa.member.domain.model.vo.IDName;
+import com.msa.member.domain.model.vo.Point;
 import com.msa.member.framework.web.dto.MemberOutPutDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class UsePointInputPort implements UsePointUsecase {
     @Override
     public MemberOutPutDTO userPoint(IDName idName, long point) throws Exception {
         Member loadMember = memberOutPutPort.loadMemberByIdName(idName);
-        loadMember.usePoint(point);
+        loadMember.usePoint(new Point(point));
         return MemberOutPutDTO.mapToDTO(loadMember);
     }
 }

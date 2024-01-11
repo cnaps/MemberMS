@@ -13,17 +13,17 @@ import javax.persistence.Embeddable;
 public class Point {
     public long pointValue ;
 
-    public long addPoint(long point){
-        this.setPointValue(this.pointValue + point);
-        return this.pointValue;
+    public Point addPoint(Point point){
+        this.setPointValue(this.pointValue + point.pointValue);
+        return new Point(this.pointValue);
     }
 
-    public long removePoint(long point) throws Exception {
-        if(point > this.pointValue) {
+    public Point removePoint(Point point) throws Exception {
+        if(point.pointValue > this.pointValue) {
             throw new Exception("기존 보유 Point보다 적어 삭제할 수 없습니다.");
         }
-        this.setPointValue(this.pointValue - point);
-        return this.pointValue;
+        this.setPointValue(this.pointValue - point.pointValue);
+        return new Point(this.pointValue);
     }
 
     public static Point createPoint()
